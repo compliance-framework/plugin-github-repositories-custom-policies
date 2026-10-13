@@ -1,0 +1,8 @@
+lisa-design:
+- ci.yml is copied verbatim from mock-plugin-policies-1 (pins 7b55019 # v1.5.1); policies live in policies/, so no directory input.
+- No repo .regal/config.yaml: CI must keep using the shared base config from workflows.
+- `violation[{...}] if` rules stay as they are (partial objects under OPA 1.x); switching to `contains` would change the output shape.
+- Tests iterate the violation object with `some v, _ in violation`, never `some v in violation` (that binds v to true).
+- get_latest_state keeps its name (avoid-get-and-list-prefix left as a warning): renaming changes a rule name in the package.
+- count(...) assertions in tests and `count(statuses) > 0` stay: assertions are not rewritten for style, and `!= []` differs for non-array values.
+- Behaviour proof: opa eval data.compliance_framework on 122 inputs, main vs branch, full output identical.
