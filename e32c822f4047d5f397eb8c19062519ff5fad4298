@@ -1,0 +1,2 @@
+lisa-selfreview:
+Pass 1 (packs core, rego-policy): approve, no findings. Callers are byte-identical to the reviewed batch-1 reference (plugin-file-attestation-policies#4) and mock-plugin-policies-1 with pins at v1.5.2; config has no drift from workflows release-please/defaults.json@v1.5.2; actionlint v1.7.12 clean; OPA 1.14.1 build/check/test (10/10) pass; old and shared bundle commands produce byte-identical bundles from policies/ only.
