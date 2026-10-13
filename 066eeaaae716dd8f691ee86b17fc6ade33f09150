@@ -1,0 +1,3 @@
+lisa-selfreview:
+- Pass 1 (core + rego-policy packs): approve, no findings on the diff. Checks re-run: opa fmt/check --strict/test (10/10)/build, Regal 0 errors 9 warnings, actionlint clean; opa eval of data.compliance_framework identical on 122 inputs + no-input.
+- Pre-existing, outside this diff (listed in the PR body, not fixed): no METADATA, risk_templates without violation_ids, package names vs file stems, README lists no policies, Makefile `@OPA test` calls a literal OPA command, two tests count `violation` without `with input`.
